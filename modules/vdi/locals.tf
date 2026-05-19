@@ -1,7 +1,7 @@
 locals {
   private_zone_name = "${var.project_prefix}.vdi.internal"
   random_id         = random_id.suffix.hex
-  name_prefix       = "${var.project_prefix}-${var.environment}"
+  name_prefix       = "${var.project_prefix}-${var.environment}-${local.random_id}"
   log_group_name    = "/${var.project_prefix}/vdi/logs"
   s3_bucket_names = {
     keys    = "${var.project_prefix}-vdi-keys-${local.random_id}"
